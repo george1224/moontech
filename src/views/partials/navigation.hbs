@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/"><img src="/img/Moontech-Logo-1.png" class="mx-auto d-bloc m-4 logo"
+                alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {{#if user}}
+        <strong class="text-white me-3">Hola, {{user.name}}</strong>
+        {{/if}}
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/users/logout">Logout</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/users/signin">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/signup">Sign Up</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
